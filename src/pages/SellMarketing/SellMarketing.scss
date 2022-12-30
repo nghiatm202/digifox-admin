@@ -1,0 +1,51 @@
+.orderList {
+    h1 {
+        font-weight: 500;
+        color: #2c2e74;
+        font-size: 32px;
+    }
+
+    .tabs {
+        border-bottom: 1px solid #caccd6;
+        margin-bottom: 32px;
+
+        button {
+            cursor: default;
+            color: #c2c2c2;
+            line-height: normal;
+            font-size: 20px;
+            font-weight: 500;
+            padding: 9px 12px;
+
+
+        }
+
+        .active {
+            color: #2c2e74;
+            border-bottom: 3px solid #2c2e74;
+
+        }
+    }
+
+    .wrapper {
+        .left {
+            button {
+                &:last-child {
+                    color: #fff
+                }
+            }
+        }
+
+        .right {
+            button {
+                color: #fff
+            }
+        }
+    }
+
+    .cell {
+        width: 100%;
+        padding: 12px 4px;
+        background-color: #f2f2f2;
+    }
+}

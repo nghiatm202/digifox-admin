@@ -1,4 +1,4 @@
-import { colors } from "@mui/material"
+// import { colors } from "@mui/material"
 
 const colorConfig = {
   sidebar: {
@@ -11,7 +11,7 @@ const colorConfig = {
     bg: "#fff",
     color: "#000",
   },
-  mainBg: colors.grey["100"],
+  mainBg: "#f4f7fa",
 }
 
 export default colorConfig

@@ -6,6 +6,11 @@ import ClientPage from "../pages/Account/ClientPage"
 import RolePermmissionPage from "../pages/Account/RolePermmissionPage"
 import HomePage from "../pages/Home/HomePage"
 import InstallationPage from "../pages/Installation/InstallationPage"
+//Sell Marketing Page
+import SellMarketing from "../pages/SellMarketing"
+import CodListPage from "../pages/SellMarketing/CodListPage"
+import CodManagerPage from "../pages/SellMarketing/CodManagerPage"
+import OrderListPage from "../pages/SellMarketing/OrderListPage"
 // import ContentPageLayout from "../pages/Content/ContentPageLayout"
 import InstructorPage from "../pages/Content/InstructorPage"
 import CoursesPage from "../pages/Content/CoursesPage"
@@ -86,6 +91,41 @@ const appRoutes = [
           displayText: "Vai trò và phân quyền",
         },
       },
+    ],
+  },
+  {
+    path: "/sell-marketing",
+    element: <SellMarketing />,
+    state: "sellMarketing",
+    sidebarProps: {
+      displayText: "Quản lý bán hàng",
+      icon: <AppsOutlinedIcon />,
+    },
+    child: [
+      {
+        path: "/sell-marketing/order-list",
+        element: <OrderListPage />,
+        state: "sellmarketing.orderlist",
+        sidebarProps: {
+          displayText: "Danh sách đơn hàng",
+        },
+      },
+      {
+        path: "/sell-marketing/cod-manager",
+        element: <CodManagerPage />,
+        state: "sellmarketing.codmanager",
+        sidebarProps: {
+          displayText: "Quản lý COD",
+        },
+      },
+      {
+        path: "/sell-marketing/cod-list",
+        element: <CodListPage />,
+        state: "sellmarketing.codlist",
+        sidebarProps: {
+          displayText: "Xử lý đơn COD",
+        },
+      }
     ],
   },
 ]

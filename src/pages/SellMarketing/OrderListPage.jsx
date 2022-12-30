@@ -10,7 +10,6 @@ import Select from '@mui/material/Select';
 //import button mui
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 
 //import table mui
 import Table from '@mui/material/Table';
@@ -20,11 +19,11 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-// //import date picker
-// import TextField from '@mui/material/TextField';
-// import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
-// import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
-// import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+//import date picker
+import TextField from '@mui/material/TextField';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
+import { DatePicker } from '@mui/x-date-pickers/DatePicker';
 
 const theme = createTheme({
     palette: {
@@ -47,7 +46,7 @@ const theme = createTheme({
 function OrderListPage() {
     const [order, setOrder] = useState("")
     //date picker
-    // const [value, setValue] = useState(null);
+    const [value, setValue] = useState(null);
     const handleChange = (event) => {
         setOrder(event.target.value)
     }
@@ -87,16 +86,16 @@ function OrderListPage() {
                                     </Select>
                                 </FormControl>
                             </Box>
-                            {/* <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <LocalizationProvider dateAdapter={AdapterDayjs} sx={{ minWidth: 200 }}  >
                                 <DatePicker
-                                    label="Basic example"
+                                    label="Thời gian"
                                     value={value}
                                     onChange={(newValue) => {
                                         setValue(newValue);
                                     }}
-                                    renderInput={(params) => <TextField {...params} />}
+                                    renderInput={(params) => <TextField {...params} size="small" />}
                                 />
-                            </LocalizationProvider> */}
+                            </LocalizationProvider>
                             <ThemeProvider theme={theme}>
                                 <Button variant="contained" color="btn">Lọc
                                 </Button>

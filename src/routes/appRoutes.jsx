@@ -1,9 +1,9 @@
 import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined"
 import FileDownloadOutlinedIcon from "@mui/icons-material/FileDownloadOutlined"
-import ContentPageLayout from "../pages/Content/ContentPageLayout"
 import AccountPageLayout from "../pages/Account/AccountPageLayout"
 import ClientPage from "../pages/Account/ClientPage"
 import RolePermmissionPage from "../pages/Account/RolePermmissionPage"
+import ContentPageLayout from "../pages/Content/ContentPageLayout"
 import HomePage from "../pages/Home/HomePage"
 import InstallationPage from "../pages/Installation/InstallationPage"
 //Sell Marketing Page
@@ -12,9 +12,14 @@ import CodListPage from "../pages/SellMarketing/CodListPage"
 import CodManagerPage from "../pages/SellMarketing/CodManagerPage"
 import OrderListPage from "../pages/SellMarketing/OrderListPage"
 // import ContentPageLayout from "../pages/Content/ContentPageLayout"
-import InstructorPage from "../pages/Content/InstructorPage"
+import AutomationPageLayout from "../pages/Automation/AutomationPageLayout"
+import AutomationsPage from "../pages/Automation/AutomationsPage"
 import CoursesPage from "../pages/Content/CoursesPage"
+import InstructorPage from "../pages/Content/InstructorPage"
 import ManagerPage from "../pages/Content/ManagerPage"
+import SupportPageLayout from "../pages/Support/SupportPageLayout"
+import CkCodePage from "../pages/Support/CkCodePage"
+import ActiveCodePage from "../pages/Support/ActiveCodePage"
 
 const appRoutes = [
   {
@@ -125,7 +130,53 @@ const appRoutes = [
         sidebarProps: {
           displayText: "Xử lý đơn COD",
         },
-      }
+      },
+    ],
+  },
+  {
+    path: "/automation",
+    element: <AutomationPageLayout />,
+    state: "automation",
+    sidebarProps: {
+      displayText: "Tự động hóa",
+      icon: <AppsOutlinedIcon />,
+    },
+    child: [
+      {
+        path: "/automation/automations",
+        element: <AutomationsPage />,
+        state: "automation.automations",
+        sidebarProps: {
+          displayText: "Tác vụ tự động",
+        },
+      },
+    ],
+  },
+  {
+    path: "/support",
+    element: <SupportPageLayout />,
+    state: "support",
+    sidebarProps: {
+      displayText: "Hỗ trợ khách hàng",
+      icon: <AppsOutlinedIcon />,
+    },
+    child: [
+      {
+        path: "/support/active-code",
+        element: <ActiveCodePage />,
+        state: "support.active-code",
+        sidebarProps: {
+          displayText: "Mã kích hoạt",
+        },
+      },
+      {
+        path: "/support/ck-code",
+        element: <CkCodePage />,
+        state: "support.ck-code",
+        sidebarProps: {
+          displayText: "Mã chuyển khoản",
+        },
+      },
     ],
   },
 ]
